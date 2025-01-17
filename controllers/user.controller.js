@@ -28,4 +28,13 @@ router.post('/', async (req, res) => {
     res.status(200).send('Criado com sucesso.')
 })
 
+router.put('/:id', async (req, res) => {
+    const affectedRows = await service.updateUser(req.body, req.params.id)
+    if (affectedRows == 0)
+        res.status(404).json('Não há registros com o id: ' + req.params.id + ' para alterar.')
+    else
+        res.status(200).send('Atualizado com sucesso.')
+})
+
+
 module.exports = router;

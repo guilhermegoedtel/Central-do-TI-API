@@ -22,3 +22,8 @@ module.exports.addUser = async (obj) => {
     return affectedRows;
 }
 
+module.exports.updateUser = async (obj, id) => {
+    const [{ affectedRows }] = await db.query("UPDATE users SET name = ?, user = ?, password = ? WHERE id = ?", 
+        [obj.name, obj.user, md5(obj.password), id])
+    return affectedRows;
+}
