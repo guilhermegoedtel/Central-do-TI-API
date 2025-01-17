@@ -23,4 +23,9 @@ router.delete('/:id', async (req, res) => {
         res.send('Deletado com sucesso.')
 })
 
+router.post('/', async (req, res) => {
+    await service.addUser(req.body)
+    res.status(200).send('Criado com sucesso.')
+})
+
 module.exports = router;
