@@ -23,7 +23,13 @@ module.exports.addUser = async (obj) => {
 }
 
 module.exports.updateUser = async (obj, id) => {
+    const [records] = await db.query("SELECT password FROM users WHERE id = ?", [id])
+    if (records[0].password == md5(obj.password)) {
+        password = records[0].password
+    } else {
+        password = md5(obj.password)
+    }
     const [{ affectedRows }] = await db.query("UPDATE users SET name = ?, user = ?, password = ? WHERE id = ?", 
-        [obj.name, obj.user, md5(obj.password), id])
+        [obj.name, obj.user, password, id])
     return affectedRows;
 }
