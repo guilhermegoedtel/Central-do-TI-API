@@ -3,12 +3,14 @@ const express = require('express'), router = express.Router()
 const service = require('../services/user.service')
 
 router.get('/', async (req, res) => {
-    const users = await service.getAllUsers()
+    token = req.headers.authorization
+    const users = await service.getAllUsers(token)
     res.send(users)
 })
 
 router.get('/:id', async (req, res) => {
-    const user = await service.getUserById(req.params.id)
+    token = req.headers.authorization
+    const user = await service.getUserById(token, req.params.id)
     if (user == undefined)
         res.status(404).json('Não há registros com o id: ' + req.params.id)
     else
@@ -16,24 +18,27 @@ router.get('/:id', async (req, res) => {
 })
 
 router.delete('/:id', async (req, res) => {
-    const affectedRows = await service.deleteUser(req.params.id)
-    if (affectedRows == 0)
+    token = req.headers.authorization
+    const affectedRows = await service.deleteUser(token, req.params.id)
+    if (affectedRows.success == 'false')
         res.status(404).json('Não há registros com o id: ' + req.params.id)
     else
-        res.send('Deletado com sucesso.')
+        res.send(affectedRows)
 })
 
 router.post('/', async (req, res) => {
-    await service.addUser(req.body)
-    res.status(200).send('Criado com sucesso.')
+    token = req.headers.authorization
+    const affectedRows = await service.addUser(token, req.body)
+    res.status(200).send(affectedRows)
 })
 
 router.put('/:id', async (req, res) => {
-    const affectedRows = await service.updateUser(req.body, req.params.id)
+    token = req.headers.authorization
+    const affectedRows = await service.updateUser(token, req.params.id, req.body)
     if (affectedRows == 0)
         res.status(404).json('Não há registros com o id: ' + req.params.id + ' para alterar.')
     else
-        res.status(200).send('Atualizado com sucesso.')
+        res.status(200).send(affectedRows)
 })
 
 
