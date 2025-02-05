@@ -23,8 +23,7 @@ module.exports.login = async (obj) => {
     return data;
 }
 
-module.exports.validate = async (obj) => {
-    var token = obj.token
+module.exports.validate = async (token) => {
     try {
         const secret = private_key;
         const decoded = jwt.verify(token, secret);

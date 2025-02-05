@@ -10,7 +10,7 @@ router.post('/token', async (req, res) => {
 
 // VALIDATE LOGIN
 router.post('/validate', async (req, res) => {
-    const validate = await service.validate(req.body)
+    const validate = await service.validate(req.body.token)
     res.status(200).send(validate)
 })
 
