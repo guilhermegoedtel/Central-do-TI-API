@@ -3,8 +3,8 @@ var md5 = require('md5')
 const service = require('./login.service')
 
 module.exports.getAllUsers = async (token) => {
-    token_validate = await service.validate(token.split(' ')[1])
-    if(token_validate.success == true){
+    tokenValidate = await service.validate(token.split(' ')[1])
+    if(tokenValidate.success == true){
         [record] = await db.query("SELECT * FROM users")
         data = { "success": true, "data": record }
     } else {
@@ -14,8 +14,8 @@ module.exports.getAllUsers = async (token) => {
 }
 
 module.exports.getUserById = async (token, id) => {
-    token_validate = await service.validate(token.split(' ')[1])
-    if(token_validate.success == true){
+    tokenValidate = await service.validate(token.split(' ')[1])
+    if(tokenValidate.success == true){
         [record] = await db.query("SELECT * FROM users WHERE id = ?", [id])
         data = { "success": true, "data": record }
     } else {
@@ -25,8 +25,8 @@ module.exports.getUserById = async (token, id) => {
 }
 
 module.exports.deleteUser = async (token, id) => {
-    token_validate = await service.validate(token.split(' ')[1])
-    if(token_validate.success == true){
+    tokenValidate = await service.validate(token.split(' ')[1])
+    if(tokenValidate.success == true){
         const [{ affectedRows }] = await db.query("DELETE FROM users WHERE id = ?", [id])
         if(affectedRows == 1){
             data = { "success": true, "data": "Usuário apagado" }
@@ -40,8 +40,8 @@ module.exports.deleteUser = async (token, id) => {
 }
 
 module.exports.addUser = async (token, obj) => {
-    token_validate = await service.validate(token.split(' ')[1])
-    if(token_validate.success == true){
+    tokenValidate = await service.validate(token.split(' ')[1])
+    if(tokenValidate.success == true){
         const [{ affectedRows }] = await db.query("INSERT INTO users (name, user, password) VALUES (?, ?, ?)", [obj.name, obj.user, md5(obj.password)])
         if(affectedRows == 1){
             data = { "success": true, "data": "Usuário criado com sucesso" }
@@ -55,8 +55,8 @@ module.exports.addUser = async (token, obj) => {
 }
 
 module.exports.updateUser = async (token, id, obj) => {
-    token_validate = await service.validate(token.split(' ')[1])
-    if(token_validate.success == true){
+    tokenValidate = await service.validate(token.split(' ')[1])
+    if(tokenValidate.success == true){
         const [records] = await db.query("SELECT password FROM users WHERE id = ?", [id])
         if (records[0].password == md5(obj.password)) {
             password = records[0].password
