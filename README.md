@@ -12,4 +12,7 @@ Rodar:
 
 npm install
 
-npm start -> Comando para inicar o server
+npm start -> Comando para iniciar o server
+
+# Obs:
+Trocar a string do key.js
