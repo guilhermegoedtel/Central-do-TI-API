@@ -1,0 +1,305 @@
+{
+	"info": {
+		"_postman_id": "84edca49-daf3-4cc0-84dd-5596bac20ddc",
+		"name": "Central API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9569998"
+	},
+	"item": [
+		{
+			"name": "Usuários",
+			"item": [
+				{
+					"name": "GET USERS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywibmFtZSI6Ikd1aWxoZXJtZSBHb2VkdGVsIiwidXNlciI6Imd1aWxoZXJtZS5nb2VkdGVsIiwiaWF0IjoxNzM4NzY5ODY3LCJleHAiOjE3Mzg4Mjc0Njd9.XvxXHPVxJAoKj7XwMkVu-PuuBWAbrKBCWWTYAxUN1vk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET USER",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywibmFtZSI6Ikd1aWxoZXJtZSBHb2VkdGVsIiwidXNlciI6Imd1aWxoZXJtZS5nb2VkdGVsIiwiaWF0IjoxNzM4NzY5ODY3LCJleHAiOjE3Mzg4Mjc0Njd9.XvxXHPVxJAoKj7XwMkVu-PuuBWAbrKBCWWTYAxUN1vk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/users/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT USER",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwibmFtZSI6Ikd1aWxoZXJtZSBHb2VkdGVsIiwidXNlciI6Imd1aWxoZXJtZS5nb2VkdGVsIiwiaWF0IjoxNzM4Nzg0Mjc0LCJleHAiOjE3Mzg4NDE4NzR9.V7RW4P6i-Nz9QydRilymW7BT-lUWv9V_GF-TJ9CeVgk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Guilherme Rigueti Goedtel\",\r\n    \"user\": \"guilherme.rigueti\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE USER",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywibmFtZSI6Ikd1aWxoZXJtZSBHb2VkdGVsIiwidXNlciI6Imd1aWxoZXJtZS5nb2VkdGVsIiwiaWF0IjoxNzM4NzY5ODY3LCJleHAiOjE3Mzg4Mjc0Njd9.XvxXHPVxJAoKj7XwMkVu-PuuBWAbrKBCWWTYAxUN1vk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Guilherme Rigueti Goedtel\",\r\n    \"user\": \"guilherme.rigueti_2\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE USER",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywibmFtZSI6Ikd1aWxoZXJtZSBHb2VkdGVsIiwidXNlciI6Imd1aWxoZXJtZS5nb2VkdGVsIiwiaWF0IjoxNzM4NzY5ODY3LCJleHAiOjE3Mzg4Mjc0Njd9.XvxXHPVxJAoKj7XwMkVu-PuuBWAbrKBCWWTYAxUN1vk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/users/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "CREATE TOKEN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": \"guilherme.goedtel\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VALIDATE TOKEN",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwibmFtZSI6Ikd1aWxoZXJtZSBHb2VkdGVsIiwidXNlciI6Imd1aWxoZXJtZS5nb2VkdGVsIiwiaWF0IjoxNzM4Nzg0Mjc0LCJleHAiOjE3Mzg4NDE4NzR9.V7RW4P6i-Nz9QydRilymW7BT-lUWv9V_GF-TJ9CeVgk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login/validate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Uploads",
+			"item": [
+				{
+					"name": "UPLOAD",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwibmFtZSI6Ikd1aWxoZXJtZSBHb2VkdGVsIiwidXNlciI6Imd1aWxoZXJtZS5nb2VkdGVsIiwiaWF0IjoxNzM4ODQ3NDE4LCJleHAiOjE3Mzg5MDUwMTh9.Y3czmLQtFvMsFqqtUveGBjf6_MgQnXCqcnh7_mPfjTg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "postman-cloud:///1efe48bd-f2ed-4470-a28e-46e12438e51c",
+									"disabled": true
+								},
+								{
+									"key": "texto",
+									"value": "abasdad",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
